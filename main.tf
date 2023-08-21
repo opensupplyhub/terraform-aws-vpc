@@ -143,8 +143,6 @@ resource "aws_vpc_endpoint" "s3" {
 #
 resource "aws_eip" "nat" {
   count = length(var.public_subnet_cidr_blocks)
-
-  vpc = true
 }
 
 resource "aws_nat_gateway" "default" {
