@@ -37,3 +37,7 @@ output "nat_gateway_ips" {
   value       = aws_eip.nat.*.public_ip
   description = "List of Elastic IPs associated with NAT gateways"
 }
+
+output "default_security_group_id" {
+  value = aws_vpc.default.default_security_group_id
+}
