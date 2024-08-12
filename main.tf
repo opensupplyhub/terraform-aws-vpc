@@ -193,6 +193,12 @@ resource "aws_instance" "bastion" {
   monitoring                  = true
   subnet_id                   = aws_subnet.public[0].id
   associate_public_ip_address = true
+  iam_instance_profile        = var.bastion_iam_instance_profile
+  user_data = <<EOF
+#!/bin/bash
+echo "Install EFS helper"
+yum install -y amazon-efs-utils
+EOF
 
   tags = merge(
     {
