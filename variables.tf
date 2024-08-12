@@ -71,9 +71,3 @@ variable "tags" {
   type        = map(string)
   description = "Extra tags to attach to the VPC resources"
 }
-
-variable "bastion_iam_instance_profile" {
-  default     = null
-  type        = string
-  description = "IAM Instance Profile to launch the instance with. Specified as the name of the Instance Profile"
-}
