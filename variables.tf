@@ -77,3 +77,4 @@ variable "bastion_iam_instance_profile" {
   type        = string
   description = "IAM Instance Profile to launch the instance with. Specified as the name of the Instance Profile"
 }
+
