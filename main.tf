@@ -193,6 +193,7 @@ resource "aws_instance" "bastion" {
   monitoring                  = true
   subnet_id                   = aws_subnet.public[0].id
   associate_public_ip_address = true
+  iam_instance_profile        = var.bastion_iam_instance_profile
 
   tags = merge(
     {
